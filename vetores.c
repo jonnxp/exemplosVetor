@@ -105,6 +105,29 @@ int tamanho(int *vetor){
     return tamanho;
 }
 
+//clona vetor
+int* clone(int *vetor){
+    int tamanho, i;
+    int *vetorClone;
+
+    if (testaNulo(vetor) == 1){
+        printf("ERRO(clone): O vetor fornecido é nulo.\n");
+    } else {
+        tamanho = vetor[0];
+        vetorClone = alocaVetor(tamanho);
+
+        if (testaNulo(vetorClone) == 1){
+            printf("ERRO(clone): Não foi possível alocar a quantidade de memória desejada.\n");
+        } else {
+            for (i = 1; i < tamanho; i++){
+                vetorClone[i] = vetor[i];
+            }
+        }
+    }
+
+    return vetorClone;
+}
+
 /**************************************
         LEITURA DE DADOS
 *************************************/
@@ -285,7 +308,7 @@ int calcMedia(int *vetor){
 /***********************
       UTILITÁRIOS
 ***********************/
-void atulizarSeed(){
+void atualizarSeed(){
     //seed
     srand(time(0));
 }
@@ -293,10 +316,15 @@ void atulizarSeed(){
 //protótipo de teste
 void testeSimples();
 
-//método main
+void teste2();
+
+/***************************
+            MAIN
+***************************/
 int main(){
     atualizarSeed();
-    int *vetor = alocaVetor(5);
+    teste2();
+
     //vazio
     return 0;
 }//fim main
@@ -304,9 +332,24 @@ int main(){
 
 
 /*********************************
-           Testes
+               Testes
 *********************************/
 
+void teste2(){
+    int *vetor = alocaVetor(5);
+    int media;
+
+    zeraVetor(vetor);
+    preencherRand(vetor, 5);
+    printar(vetor);
+
+    printf("--------------------------\n");
+
+    media = calcMedia(vetor);
+
+    printf("A média do vetor é: %d",media);
+
+}
 void testeSimples(){
     int *vet1 = alocaVetor(5);
     int *vet2 = alocaVetor(5);
