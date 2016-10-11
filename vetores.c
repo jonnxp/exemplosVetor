@@ -119,7 +119,7 @@ int* clone(int *vetor){
         if (testaNulo(vetorClone) == 1){
             printf("ERRO(clone): Não foi possível alocar a quantidade de memória desejada.\n");
         } else {
-            for (i = 1; i < tamanho; i++){
+            for (i = 1; i <= tamanho; i++){
                 vetorClone[i] = vetor[i];
             }
         }
@@ -323,7 +323,10 @@ void teste2();
 ***************************/
 int main(){
     atualizarSeed();
-    teste2();
+    //selecione o teste desejado
+    //teste1();
+    //teste2();
+    //teste3();
 
     //vazio
     return 0;
@@ -334,6 +337,15 @@ int main(){
 /*********************************
                Testes
 *********************************/
+
+void teste3(){
+    int *vetor = alocaVetor(5);
+    preencherRand(vetor, 100);
+    printar(vetor);
+    int *vetor2 = clone(vetor);
+    printf("----------------\n");
+    printar(vetor2);
+}
 
 void teste2(){
     int *vetor = alocaVetor(5);
