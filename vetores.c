@@ -9,6 +9,11 @@
     @AUTHOR JONATHAN DOUGLAS DIEGO TAVARES
     @FUNCAO: TESTAR FUNCÕES PARA ATUAR COM VETORES
 **************************************************/
+/****************************************************
+IMPORTANTE:
+A PRIMEIRA POSICÃO É PARA GUARDAR O TAMANHO DO VETOR
+****************************************************/
+
 
 /****************************
 OPERAÇÕES BÁSICAS DE HUD
@@ -291,6 +296,7 @@ void testeSimples();
 //método main
 int main(){
     atualizarSeed();
+    int *vetor = alocaVetor(5);
     //vazio
     return 0;
 }//fim main
