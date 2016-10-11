@@ -262,6 +262,7 @@ void bubblesortDec(int *vetor){
     }
 }
 
+//calcula a média do vetor (total/quantidade)
 int calcMedia(int *vetor){
     int i = 0;
     int soma = 0;
@@ -289,12 +290,8 @@ void testeSimples();
 
 //método main
 int main(){
-
-
-
-    //libera memória
-    free(vet1);
-    free(vet2);
+    atualizarSeed();
+    //vazio
     return 0;
 }//fim main
 
@@ -374,4 +371,8 @@ void testeSimples(){
     bubblesortDec(vet1);
     printar(vet1);
     separar();
+
+    //libera memória
+    free(vet1);
+    free(vet2);
 }
